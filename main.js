@@ -53,3 +53,24 @@ phone?.addEventListener('input', () => {
     phone.value = parts.join('');
 });
 
+// Сброс анимации при каждом клике на якорную ссылку
+document.addEventListener('click', function(e) {
+    if (e.target.matches('a[href^="#"]')) {
+        const targetId = e.target.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            // Удаляем анимацию
+            targetElement.style.animation = 'none';
+            
+            // Принудительная перерисовка
+            void targetElement.offsetWidth;
+            
+            // Возвращаем анимацию
+            setTimeout(() => {
+                targetElement.style.animation = 'fadeOutline 3s forwards';
+            }, 10);
+        }
+    }
+});
+
