@@ -1,54 +1,115 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Главная - Название вашего сайта</title>
- <meta name="description" content="Краткое описание главной страницы вашего сайта">
- <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
- <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - Название вашего сайта</title>
+    <meta name="description" content="Наш сайт">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
  <!-- Шапка сайта -->
- <header class="site-header"> 
-<a class="site-header__brand" href="index.html">Лого</a> 
-<nav class="site-nav" aria-label="Основная навигация"> 
-<ul class="site-nav__list"> 
-<li class="site-nav__item"><a class="site-nav__link" 
-href="index.html">Главная</a></li> 
-<li class="site-nav__item"><a class="site-nav__link" 
-href="about.html">О нас</a></li> 
-<li class="site-nav__item"><a class="site-nav__link site-nav__link-
-cta" href="contacts.html">Контакты</a></li> 
-</ul> 
-</nav> 
-</header> 
+    <header class="site-header">
+        <div class="top-bar">
+            <div class="top-bar-content">
+                <a class="top-bar-link" href="index.html">Главная</a>
+                <a class="top-bar-link" href="about.html">О нас</a>
+                <a class="top-bar-link" href="contacts.html">Контакты</a>
+            </div>
+        </div>
+    </header> 
  <!-- Уникальное основное содержимое страницы -->
- <main>
- <h1>Добро пожаловать на наш сайт!</h1>
- <img src="assets/coconut.png" title="БАБУБЭ" class="first-pic">
- <!-- Секция 1 с якорем -->
- <section id="services">
- <h2>Наши услуги</h2>
- <p>Описание предоставляемых услуг...</p>
- <a href="#contacts">Связаться с нами</a> <!-- Якорная ссылка внутри страницы -->
- </section>
- <!-- Секция 2 с якорем -->
- <section id="portfolio">
- <h2>Портфолио</h2>
- <p>Примеры наших работ...</p>
- </section>
- <!-- Секция 3 с якорем -->
- <section id="contacts">
- <h2>Контактная информация</h2>
- <p>Наши контакты...</p>
- <a href="contacts.html">Подробнее</a> <!-- Ссылка на отдельную страницу -->
- </section>
- </main>
+    <main>
+        <h1>Добро пожаловать на наш сайт!</h1>
+        <picture>
+            <source media="(max-width: 599px)" srcset="assets/coconut.png">
+            <source media="(min-width: 600px)" srcset="assets/scout.png">
+            <img src="assets/coconut.png" alt="scout">
+        </picture>
+        <!-- Секция 1 с якорем -->
+        <section id="services">
+            <h2>Наши услуги</h2>
+            <nav>
+                <ul>
+                    <li>Разработка мобильных приложений</li>
+                    <li>Проектирование UI/UX дизайна</li>
+                    <li>Разработка веб-приложений</li>
+                    <li>Техническая поддержка и развитие</li>
+                    <li>Разработка Backend-инфраструктуры</li>
+                    <li>Тестирование и QA</li>
+                    <li>Публикация в магазинах приложений</li>
+                    <li>Технический аудит и консалтинг</li>
+                    <li>Интеграция с внешними сервисами</li>
+                    <li>Разработка MVP (Минимально Жизнеспособного Продукта)</li>
+                </ul>
+            </nav>
+            <a href="#contacts" id="Contact_with_us">Связаться с нами</a>
+        </section>
+        <!-- Секция 2 с якорем -->
+        <section id="portfolio">
+            <h2>Портфолио</h2>
+            <nav>
+                <ul>
+                    <li>FinTrack — мобильный банкинг</li>
+                        <ul>
+                            <li>Увеличили вовлеченность пользователей на 40%</li>
+                            <li>Сократили время на операции на 60%</li>
+                            <li>100K+ скачиваний в App Store и Google Play</li>
+                        </ul>
+                    <li>HealthGuide — трекер здоровья</li>
+                        <ul>
+                            <li>Интеграция с Apple HealthKit и Google Fit</li>
+                            <li>Персонализированные рекомендации на ИИ</li>
+                            <li>4.8★ рейтинг в магазинах приложений</li>
+                        </ul>
+                    <li>EventMaster — платформа для мероприятий</li>
+                        <ul>
+                            <li>Реализовали продажу билетов и интерактивную карту</li>
+                            <li>Онлайн-трансляции и нетворкинг</li>
+                            <li>Обслужили 50+ мероприятий</li>
+                        </ul>
+                </ul>
+            </nav>
+        </section>
+        <!-- Секция 3 с якорем -->
+        <section id="contacts">
+            <h2>Контактная информация</h2>
+            <button id="openDialog" type="button">Оставить заявку</button>
+            <dialog id="contactDialog" aria-labelledby="dialogTitle">
+                <h2 id="dialogTitle">Обратная связь</h2>
+                <form id="contactForm" method="dialog" novalidate>
+                    <label for="name">Имя</label>
+                    <input id="name" name="name" type="text" required minlength="2" autocomplete="given-name">
+                    <label for="email">E-mail</label>
+                    <input id="email" name="email" type="email" required autocomplete="email">
+                    <label for="phone">Телефон</label>
+                    <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="phoneHelp" placeholder="+7 (___) ___-__-__" required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
+                    <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
+                    <label for="date">Дата</label>
+                    <input id="date" name="date" type="date" required>
+                    <label for="topic">Тема</label>
+                    <select id="topic" name="topic" required>
+                        <option value="">Выберите тему</option>
+                        <option>Вопрос</option>
+                        <option>Заказ</option>
+                    </select>
+                    <label for="message">Сообщение</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <div class="form-actions">
+                        <button type="button" id="closeDialog">Закрыть</button>
+                        <button type="submit">Отправить</button>
+                    </div>
+                </form>
+            </dialog>
+            <a href="contacts.html" class="new_line">Подробнее</a>
+        </section>
+    </main>
  <!-- Подвал сайта -->
- <footer>
- <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
- <p>Телефон: +7 (123) 456-78-90</p>
- </footer>
+    <footer>
+        <p>&copy; 2025 Название вашего сайта. Все права защищены.</p>
+        <p>Телефон: +7 (123) 456-78-90</p>
+    </footer>
 </body>
 </html>
