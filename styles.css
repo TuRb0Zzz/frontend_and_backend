@@ -59,6 +59,7 @@ html{ scroll-behavior:smooth; } /* Плавная прокрутка к #яко�
     font-size: larger;
     display: inline-block;
     transition: transform 0.3s ease;
+    white-space: nowrap;
 }
 
 
