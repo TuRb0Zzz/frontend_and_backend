@@ -1,0 +1,146 @@
+dialog { padding: 1.25rem; border: none; border-radius: 12px; }
+dialog::backdrop { background: rgba(0,0,0,.5); }
+.form-actions { display:flex; gap:.5rem; margin-top:1rem; }
+
+:root{ 
+/* Палитра */ --color-bg:#fff; --color-fg:#0b0b0b; --color-muted:#666; --color-primary:#0a84ff; --color-danger:#b00020; 
+/* Типографика и размеры */ --font-body:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; --space-1:4px; --space-2:8px; --space-3:16px; --space-4:24px; --space5:40px; 
+/* Скругления и тени */ --radius:12px; --shadow:0 1px 2px rgba(0,0,0,.08), 0 8px 24px rgba(0,0,0,.08); 
+} 
+/* Тёмная тема: переопределяем только значения токенов */ 
+body.theme-dark{ --color-bg:#0b0b0b; --color-fg:#f5f5f5; --color-muted:#aaa; --color-primary:#6aa2ff; 
+}
+
+*{ box-sizing:border-box; } 
+html,body{ margin:0; padding:0; } 
+body{ 
+background:var(--color-bg); 
+color:var(--color-fg); 
+font-family:var(--font-body); 
+line-height:1.5; 
+}
+
+/* Центровка и ограничение ширины контейнера */ 
+.container{ width:min(100% - 2*var(--space-4), 1120px); margin-inline:auto; } 
+/* Вертикальные отступы секций по токенам */ 
+.section{ padding-block:var(--space-5); } 
+.section__title{ margin:0 0 var(--space-3); }
+
+/* :where(...) не добавляет специфичности — проще переопределять позже */ 
+:where(a,button,input,select,textarea):focus-visible{ 
+outline:2px solid var(--color-primary); 
+outline-offset:2px; 
+} 
+/* Недоступные элементы визуально «приглушаем» */ 
+:disabled,[aria-disabled="true"]{opacity:.6;cursor:not-allowed;} 
+
+html{ scroll-behavior:smooth; } /* Плавная прокрутка к #якорю */ 
+:target{ outline:2px dashed var(--color-primary); outline-offset:4px; animation: fadeOutline 3s;} /* 
+Подсветка цели */
+
+.site-nav__link:visited{
+    color:#c809b5;
+}
+
+.site-nav__link:hover{
+    color:#00B3FF;
+}
+
+.site-nav__link:active{
+    color:#000000;
+}
+
+
+.top-bar-link{
+    border: 2px solid #000000;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 15px;
+    font-size: larger;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    white-space: nowrap;
+}
+
+
+.top-bar{
+    background-color: #f8f9fa;
+    height: 30px;
+}
+
+.top-bar-content{
+    display: flex;
+    justify-content: center;
+    gap: 3cm;
+    margin: 15px;
+}
+
+.top-bar-link:hover{
+    transform: scale(1.1);
+}
+#openDialog:hover{
+    transform: scale(1.1);
+}
+
+.top-bar-link:visited{
+    color: #000000;
+}
+
+#Contact_with_us{
+    margin-left: 20px;
+}
+
+.new_line{
+    display: block;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#openDialog{
+    margin-left: 20px;
+    border: 2px solid #000000;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 15px;
+    font-size: larger;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+@keyframes fadeOutline {
+    0%, 70% {
+        outline: 2px dashed var(--color-primary);
+        outline-offset: 4px;
+    }
+    100% {
+        outline: none;
+        outline-offset: 0;
+    }
+}
+
+#about_text{
+    margin-left: 10px;
+    margin-right: 30px;
+    text-align: justify;
+}
+
+p{
+    margin-left: 10px;
+    margin-right: 30px; 
+}
+
+dialog::backdrop{
+    backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+    .top-bar-content {
+        gap: 1cm; /* Уменьшаем расстояние между кнопками */
+        margin: 10px 5px; /* Уменьшаем отступы */
+    }
+    main{
+        margin-top: 40px;
+    }
+}
+
