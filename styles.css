@@ -133,6 +133,13 @@ dialog::backdrop{
     backdrop-filter: blur(5px);
 }
 
-
-
+@media (max-width: 768px) {
+    .top-bar-content {
+        gap: 1cm; /* Уменьшаем расстояние между кнопками */
+        margin: 10px 5px; /* Уменьшаем отступы */
+    }
+    main{
+        margin-top: 40px;
+    }
+}
 
