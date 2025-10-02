@@ -6,40 +6,69 @@
     <title>Контакты - Название вашего сайта</title>
     <meta name="description" content="Контакты для связи с нами">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
- <header>
-    <a href="/">Логотип или название сайта</a>
- <!-- Главное меню навигации -->
- <nav>
- <ul>
- <li><a href="index.html">Главная</a></li>
- <li><a href="about.html">О нас</a></li>
- <li><a href="contacts.html">Контакты</a></li>
- </ul>
- </nav>
- </header>
- <main>
- <!-- Простые "хлебные крошки" -->
- <nav aria-label="Хлебные крошки">
- <a href="index.html">Главная</a> →
- <span>Контакты</span>
- </nav>
- <h1>Способы связи</h1>
- <section>
- <h2>Напишите нам</h2>
- <p>email@example.com</p>
- <p2>email1@example.com</p2>
- </section>
- <section>
- <h2>Позвоните нам</h2>
- <p>+79999999999</p>
- <p2>+77777777777</p2>
- </section>
- </main>
- <footer>
- <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
- <p>Телефон: +7 (123) 456-78-90</p>
- </footer>
+    <header class="site-header">
+        <div class="top-bar">
+            <div class="top-bar-content">
+                <a class="top-bar-link" href="index.html">Главная</a>
+                <a class="top-bar-link" href="about.html">О нас</a>
+                <a class="top-bar-link" href="contacts.html">Контакты</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Простые "хлебные крошки" -->
+        <nav aria-label="Хлебные крошки">
+            <a href="index.html">Главная</a> → <span>Контакты</span>
+        </nav>
+        <h1>Способы связи</h1>
+        <section>
+            <h2>Напишите нам</h2>
+            <p>email@example.com</p>
+            <p>email1@example.com</p>
+        </section>
+        <section>
+            <h2>Позвоните нам</h2>
+            <p>+79999999999</p>
+            <p>+77777777777</p>
+        </section>
+        <section>
+            <h2>Оставьте заявку</h2>
+            <button id="openDialog" type="button">Оставить заявку</button>
+             <dialog id="contactDialog" aria-labelledby="dialogTitle">
+                <h2 id="dialogTitle">Обратная связь</h2>
+                <form id="contactForm" method="dialog" novalidate>
+                    <label for="name">Имя</label>
+                    <input id="name" name="name" type="text" required minlength="2" autocomplete="given-name">
+                    <label for="email">E-mail</label>
+                    <input id="email" name="email" type="email" required autocomplete="email">
+                    <label for="phone">Телефон</label>
+                    <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="phoneHelp" placeholder="+7 (___) ___-__-__" required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
+                    <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
+                    <label for="date">Дата</label>
+                    <input id="date" name="date" type="date" required>
+                    <label for="topic">Тема</label>
+                    <select id="topic" name="topic" required>
+                        <option value="">Выберите тему</option>
+                        <option>Вопрос</option>
+                        <option>Заказ</option>
+                    </select>
+                    <label for="message">Сообщение</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <div class="form-actions">
+                        <button type="button" id="closeDialog">Закрыть</button>
+                        <button type="submit" id="submit_button">Отправить</button>
+                    </div>
+                </form>
+            </dialog>       
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
+        <p>Телефон: +7 (123) 456-78-90</p>
+    </footer>
 </body>
 </html>
