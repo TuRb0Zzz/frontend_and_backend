@@ -3,114 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная - Название вашего сайта</title>
+    <title>Главная - Портфолио</title>
     <meta name="description" content="Наш сайт">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
-    <script src="main.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrapicons@1.11.1/font/bootstrap-icons.css">
 </head>
-<body>
- <!-- Шапка сайта -->
-    <header class="site-header">
-        <div class="top-bar">
-            <div class="top-bar-content">
-                <a class="top-bar-link" href="index.html">Главная</a>
-                <a class="top-bar-link" href="about.html">О нас</a>
-                <a class="top-bar-link" href="contacts.html">Контакты</a>
-            </div>
-        </div>
-    </header> 
- <!-- Уникальное основное содержимое страницы -->
-    <main>
-        <h1>Добро пожаловать на наш сайт!</h1>
-        <picture>
-            <source media="(max-width: 599px)" srcset="assets/coconut.png">
-            <source media="(min-width: 600px)" srcset="assets/scout.png">
-            <img src="assets/coconut.png" alt="scout">
-        </picture>
-        <video src="assets/fish.mp4" controls width="80%"></video>
-        <!-- Секция 1 с якорем -->
-        <section id="services">
-            <h2>Наши услуги</h2>
-            <nav>
-                <ul>
-                    <li>Разработка мобильных приложений</li>
-                    <li>Проектирование UI/UX дизайна</li>
-                    <li>Разработка веб-приложений</li>
-                    <li>Техническая поддержка и развитие</li>
-                    <li>Разработка Backend-инфраструктуры</li>
-                    <li>Тестирование и QA</li>
-                    <li>Публикация в магазинах приложений</li>
-                    <li>Технический аудит и консалтинг</li>
-                    <li>Интеграция с внешними сервисами</li>
-                    <li>Разработка MVP (Минимально Жизнеспособного Продукта)</li>
-                </ul>
-            </nav>
-            <a href="#contacts" id="Contact_with_us">Связаться с нами</a>
-        </section>
-        <!-- Секция 2 с якорем -->
-        <section id="portfolio">
-            <h2>Портфолио</h2>
-            <nav>
-                <ul>
-                    <li>FinTrack — мобильный банкинг</li>
-                        <ul>
-                            <li>Увеличили вовлеченность пользователей на 40%</li>
-                            <li>Сократили время на операции на 60%</li>
-                            <li>100K+ скачиваний в App Store и Google Play</li>
-                        </ul>
-                    <li>HealthGuide — трекер здоровья</li>
-                        <ul>
-                            <li>Интеграция с Apple HealthKit и Google Fit</li>
-                            <li>Персонализированные рекомендации на ИИ</li>
-                            <li>4.8★ рейтинг в магазинах приложений</li>
-                        </ul>
-                    <li>EventMaster — платформа для мероприятий</li>
-                        <ul>
-                            <li>Реализовали продажу билетов и интерактивную карту</li>
-                            <li>Онлайн-трансляции и нетворкинг</li>
-                            <li>Обслужили 50+ мероприятий</li>
-                        </ul>
-                </ul>
-            </nav>
-        </section>
-        <!-- Секция 3 с якорем -->
-        <section id="contacts">
-            <h2>Контактная информация</h2>
-            <button id="openDialog" type="button">Оставить заявку</button>
-            <dialog id="contactDialog" aria-labelledby="dialogTitle">
-                <h2 id="dialogTitle">Обратная связь</h2>
-                <form id="contactForm" method="dialog" novalidate>
-                    <label for="name">Имя</label>
-                    <input id="name" name="name" type="text" required minlength="2" autocomplete="given-name">
-                    <label for="email">E-mail</label>
-                    <input id="email" name="email" type="email" required autocomplete="email">
-                    <label for="phone">Телефон</label>
-                    <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="phoneHelp" placeholder="+7 (___) ___-__-__" required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
-                    <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
-                    <label for="date">Дата</label>
-                    <input id="date" name="date" type="date" required>
-                    <label for="topic">Тема</label>
-                    <select id="topic" name="topic" required>
-                        <option value="">Выберите тему</option>
-                        <option>Вопрос</option>
-                        <option>Заказ</option>
-                    </select>
-                    <label for="message">Сообщение</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                    <div class="form-actions">
-                        <button type="button" id="closeDialog">Закрыть</button>
-                        <button type="submit" id="submit_button">Отправить</button>
+<body class="bg-light">
+    <div class="container-fluid p-0">
+        <header class="position-relative">
+            <!-- <img src="assets/grob.png" class="img-fluid w-100" style="height: 10vh; object-fit: cover;"> Изображение для header -->
+            <div class="container-fluid bg-primary" style="height: 20vh;"></div>
+            <div class="container-fluid text-center"> 
+                <div class="row">
+                    <div class="col border border-2 border-end-0 border-dark p-2">
+                        Главная
                     </div>
-                </form>
-            </dialog>
-            <a href="contacts.html" class="new_line">Подробнее</a>
-        </section>
-    </main>
- <!-- Подвал сайта -->
-    <footer>
-        <p>&copy; 2025 Название вашего сайта. Все права защищены.</p>
-        <p>Телефон: +7 (123) 456-78-90</p>
-    </footer>
+                    <div class="col border border-2 border-end-0 border-dark p-2">
+                        Новости
+                    </div>
+                    <div class="col border border-2 border-end-0 border-dark p-2">
+                        Практики
+                    </div>
+                    <div class="col border border-2 border-end-0 border-dark p-2">
+                        Товары
+                    </div>
+                    <div class="col border border-2 border-dark p-2">
+                        Контакты    
+                    </div>
+                </div>
+            </div> 
+        </header>
+
+        <main class="container">
+            <section class="m-1 border border-2 border-dark rounded p-2 mx-auto" style="max-width: 700px;">
+                <div class="row align-items-center">
+                    <div class="col mb-3 text-center">
+                        <h1 class="h2 mb-1">Информация о авторе</h1>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col text-center">
+                        <img src="assets/cat.jpg" alt="Автор" class="img-fluid rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col text-center">
+                        <h1 class="h3 mb-1">Николаев Евгений Андреевич</h1>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col text-center">
+                        <h1 class="h3 mb-1">ЭФБО-06-24</h1>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col text-center">
+                        <div class="border border-dark rounded p-2 mx-auto" style="max-width: 600px; min-height: 100px; display: flex;">
+                            Обо мне
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-center w-75 mx-auto">
+                    <div class="col text-center border border-1 border-dark p-0 m-3">
+                        Навык 1
+                    </div>
+                    <div class="col text-center border border-1 border-dark p-0 m-3">
+                        Навык 2
+                    </div>
+                    <div class="col text-center border border-1 border-dark p-0 m-3">
+                        Навык 3
+                    </div>
+                    <div class="col text-center border border-1 border-dark p-0 m-3">
+                        Навык 4
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <div class="border border-dark rounded p-2 mb-3 mx-auto" style="max-width: 600px; min-height: 100px; display: flex; flex-direction: column;">
+                            Мой опыт:
+                            <div class="border border-dark rounded p-2 mt-3 mx-auto" style="max-width: 500px; width: 90%; min-height: 100px; display: flex; align-items: left; justify-content: left;">
+                                Опыт 1
+                            </div>
+                            <div class="border border-dark rounded p-2 mt-3 mx-auto" style="max-width: 500px; width: 90%; min-height: 100px; display: flex; align-items: left; justify-content: left;">
+                                Опыт 2
+                            </div>
+                            <div class="border border-dark rounded p-2 mt-3  mb-3 mx-auto" style="max-width: 500px; width: 90%; min-height: 100px; display: flex; align-items: left; justify-content: left;">
+                                Опыт 3
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <!-- <img src="assets/grob.png" class="img-fluid w-100" style="height: 10vh; object-fit: cover;"> Изображение для footer -->
+             <div class="container-fluid bg-primary" style="height: 20vh;"></div>
+        </footer>
+    </div>
 </body>
 </html>
+
